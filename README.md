@@ -21,3 +21,15 @@ The annotations are stored as a nested dictionary in `metadata/js-fakes-dataset.
 }
 ```
 
+---
+
+### 16th Note Split Version
+
+We additionally provide the dataset pre-sliced into 16th-note time-steps in `js-fakes-16thSeparated.npz`. This is a dictionary with keys `"pitches"` and `"chords"`. The value of each key is a numpy array of 500 sequences. For `"pitches"`, each sequence is a piece from the JS Fakes, itself a list of timesteps. Each time-step has exactly four numbers; one pitch for each of the SATB voices. If a voice is silent at a given time step, its pitch is -1. For `"chords"`, the format is the same, but each time step instead has just one value representing a chord, encoded as per [(Peracha, 2020)](https://program.ismir2020.net/poster_2-01.html). The sequence at each index corresponds to the piece at the same index in the `"pitches"` list.
+
+To load the dataset in this format in Python 3:
+```python
+import numpy as np
+
+jsf = np.load('js-fakes-16thSeparated.npz', allow_pickle=True, encoding='latin1')
+```
