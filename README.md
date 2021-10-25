@@ -8,7 +8,7 @@ The JS Fake Chorales will be periodically updated with new unannotated chorales 
 
 ---
 
-### Metdata Structure
+### Metadata Structure
 
 The annotations are stored as a nested dictionary in `metadata/js-fakes-dataset.pkl`, with the following structure:
 
@@ -19,7 +19,7 @@ The annotations are stored as a nested dictionary in `metadata/js-fakes-dataset.
             'responses': Int,  # total responses
             'correct': Int,  # responses which correctly identified the sample as composed by A.I.
             'ave_plays': Float, # average number of times the sample was played before a response was submitted
-            'ave_time': Float  # avergae time in seconds between hearing the sample and submitting a response
+            'ave_time': Float  # average time in seconds between hearing the sample and submitting a response
         }
     }
 }
